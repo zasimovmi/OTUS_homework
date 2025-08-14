@@ -134,6 +134,8 @@
 
 ![Вход в psql (две сессии)](https://github.com/zasimovmi/OTUS_homework/blob/main/screenshot/homework_1/psql.PNG)
 
+![Вход через DBeaver](https://github.com/zasimovmi/OTUS_homework/blob/main/screenshot/homework_1/connection_dbeaver.PNG)
+
 2. Выключить autocommit (в обеих сессиях)
     ```bash
         \set AUTOCOMMIT off

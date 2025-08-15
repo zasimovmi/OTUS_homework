@@ -98,7 +98,7 @@
     ```
 
 2. Внести исправления:
-```bash
+```json
     {
     "registry-mirrors": [
         "https://docker.mirrors.ustc.edu.cn",
@@ -248,5 +248,6 @@
     ```sql
         SELECT * FROM test_table;
     ```
+
 
 ![Отображаются ранее созданные записи](https://github.com/zasimovmi/OTUS_homework/blob/main/screenshot/homework_2/check_final.PNG)

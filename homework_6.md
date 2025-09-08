@@ -387,6 +387,7 @@
 
 У меня был один мне нужный путь `/usr/lib/postgresql/17/bin/postgres`
 Так как файл конфигурации у меня лежит не в /var/lib/, а в /etc/, то я сразу прописал к нему путь
+
 ---
 
 ![Успех](https://github.com/zasimovmi/OTUS_homework/blob/main/screenshot/homework_6/single_session.PNG)
@@ -439,5 +440,6 @@
   		END LOOP;
 	END $$;
     ```
+
 
 ![Смотрим результат](https://github.com/zasimovmi/OTUS_homework/blob/main/screenshot/homework_6/do.PNG)

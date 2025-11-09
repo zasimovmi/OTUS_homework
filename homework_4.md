@@ -1,5 +1,7 @@
 # Выполнение домашнего задания №4
 
+# Работа с базами данных, пользователями и правами
+
 ## Установка VirtualBox на Windows
 1. Скачать "Windows hosts" (ссыслка: [VirtualBox](https://www.virtualbox.org/wiki/Downloads/))
 2. Устновить VirtualBox
@@ -224,9 +226,9 @@
 ![Подключение произошло под пользователем testread](https://github.com/zasimovmi/OTUS_homework/blob/main/screenshot/homework_4/psql_testread_first_enter.PNG)
 
 ## Попытка SELECT
-    ```sql
-        SELECT * FROM t1;
-    ```
+```sql
+SELECT * FROM t1;
+```
 
 ![Ошибка](https://github.com/zasimovmi/OTUS_homework/blob/main/screenshot/homework_4/error_permission_denied.PNG)
 
@@ -370,4 +372,5 @@
 ![Таблица не создалась](https://github.com/zasimovmi/OTUS_homework/blob/main/screenshot/homework_4/error_after_revoke.PNG)
 
 **Результат:**оОшибка - нет прав на создание таблицы в схеме public.
+
 **Объяснение:** после отзыва прав из public пользователь testread больше не может создавать таблицы.

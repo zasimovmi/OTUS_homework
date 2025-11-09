@@ -1,4 +1,6 @@
-# Выполнение домашнего задания
+# Выполнение домашнего задания №2
+
+# Установка и настройка PostgreSQL в контейнере Docker
 
 ## Установка VirtualBox на Windows
 1. Скачать "Windows hosts" (ссыслка: [VirtualBox](https://www.virtualbox.org/wiki/Downloads/))
@@ -215,7 +217,7 @@
 
 ![Подключение через DBeaver произведено успешно](https://github.com/zasimovmi/OTUS_homework/blob/main/screenshot/homework_2/dbeaver.PNG)
 
-## Удалbnm и восстановbnm контейнер с сохранением данных
+## Удалить и восстановить контейнер с сохранением данных
 1. Сделать остановку контейнера
     ```bash
         sudo docker stop postgres-server

@@ -1,5 +1,7 @@
 # Выпонение домашнего задания №6
 
+# Настройка autovacuum с учётом особенностей производительности
+
 ## Основное домашнее задание
 
 ### Установка VirtualBox на Windows
@@ -443,3 +445,4 @@
 
 
 ![Смотрим результат](https://github.com/zasimovmi/OTUS_homework/blob/main/screenshot/homework_6/do.PNG)
+

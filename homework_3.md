@@ -1,5 +1,7 @@
 # Выпонение домашнего задания №3
 
+# Установка и настройка PostgreSQL (+ работа с виртуальными дисками)
+
 ## Основное домашнее задание
 
 ### Установка VirtualBox на Windows
@@ -165,7 +167,7 @@
 
 ![Настройки применены](https://github.com/zasimovmi/OTUS_homework/blob/main/screenshot/homework_3/initialization.PNG)
 
-### Создаnm файловую систему и монтирование
+### Создать файловую систему и монтирование
 1. Создать файловую систему ext4
     ```bash
         sudo mkfs.ext4 /dev/sdb1
@@ -253,7 +255,7 @@
 
 ![Вернулась созданная ранее запись](https://github.com/zasimovmi/OTUS_homework/blob/main/screenshot/homework_3/check_after_s.PNG)
 
-## Домашнее задание со звёздочкой
+## Домашнее задание со звёздочкой (*)
 
 ### Создать новую ВМ
 1. Проделать шаги, описанные выше:
@@ -361,5 +363,6 @@ sudo -u postgres psql -c "SELECT * FROM test;"
 ```
 
 **Комментарии:** видим ту же таблицу с данными, что создавали на первой ВМ
+
 
 ![Данные видны](https://github.com/zasimovmi/OTUS_homework/blob/main/screenshot/homework_3/final_check.PNG)

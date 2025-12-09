@@ -78,29 +78,29 @@
 4. Установка произошла успешно
 5. Войти под созданным пользователем
 6. Зайти в терминал
-6. Создаем пользователя patroni и добавляем в группу sudo:
+7. Создаем пользователя patroni и добавляем в группу sudo:
     1. Ввести комманду
-```bash
+    ```bash
         sudo useradd -m -s /bin/bash patroni
-```
+    ```
     2. Ввести пароль
     3. Выполнить команду
-```bash
+    ```bash
         echo "patroni:patroni" | sudo chpasswd  # пароль тоже patroni
-```
+    ```
     4. Выполнить команду
-```bash
+    ```bash
         sudo usermod -aG sudo patroni
-```
+    ```
     5. Проверить, что пользователь patroni добавлен в группу
-```bash
+    ```bash
         getent group sudo
         # Получил подтверждение: sudo:x:27:user1, patroni
-```
+    ```
     6. Сменить пользователя
-```bash
+    ```bash
         su - patroni
-```
+    ```
 
 ![Проверка пройдена успешно](https://github.com/zasimovmi/OTUS_homework/blob/main/screenshot/project/user_patroni.PNG)
 
@@ -913,5 +913,6 @@ EOF
 8. Открыть в браузере: http://192.168.0.30:8404/stats
 - Логин: admin
 - Пароль: adminpassword
+
 
 ![Статистика успешно открылась](https://github.com/zasimovmi/OTUS_homework/blob/main/screenshot/project/haproxy_statistics.PNG)

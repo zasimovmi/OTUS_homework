@@ -371,6 +371,7 @@ SELECT * FROM t1;
 
 ![Таблица не создалась](https://github.com/zasimovmi/OTUS_homework/blob/main/screenshot/homework_4/error_after_revoke.PNG)
 
-**Результат:**оОшибка - нет прав на создание таблицы в схеме public.
+**Результат:** ошибка - нет прав на создание таблицы в схеме public.
 
 **Объяснение:** после отзыва прав из public пользователь testread больше не может создавать таблицы.
+

@@ -82,7 +82,7 @@
 **Результат:** планировщик использует индекс (это видно по строке "Bitmap Index Scan on idx_products_category").
 Это означает, что PostgreSQL сначала использует индекс idx_products_category, а затем обращается к таблице.
 
-    ```text
+```text
         Bitmap Heap Scan on products  (cost=368.82..2837.12 rows=32584 width=23) (actual time=0.926..7.001 rows=33335 loops=1)
         Recheck Cond: ((category)::text = 'Electronics'::text)
         Heap Blocks: exact=2061
@@ -94,7 +94,7 @@
         Buffers: shared hit=24 read=2
         Planning Time: 0.123 ms
         Execution Time: 7.730 ms
-    ```
+```
 
 **Комментарии:**
 - ***Тип индекса:*** B-tree (по умолчанию в PostgreSQL)
@@ -233,7 +233,7 @@ GIN индекс работает отлично:
 
 **Результат:** индекс не используется
 
-    ```text
+```text
         Seq Scan on products  (cost=0.00..7009.05 rows=10 width=23) (actual time=28.200..28.202 rows=1 loops=1)
             Filter: (lower((name)::text) ~~ '%iphone%'::text)
             Rows Removed by Filter: 100002
@@ -242,7 +242,7 @@ GIN индекс работает отлично:
             Buffers: shared hit=16 read=5
         Planning Time: 48.872 ms
         Execution Time: 28.219 ms
-    ```
+```
 
 ***Проблема:*** индекс может использоваться ТОЛЬКО для:
 - `LIKE 'iphone%'` - поиск по началу строки
@@ -268,7 +268,7 @@ GIN индекс работает отлично:
 
 **Результат:**
 
-    ```text
+```text
         Seq Scan on products  (cost=10000000000.00..10000007009.05 rows=10 width=23) (actual time=447.557..447.559 rows=1 loops=1)
             Filter: (lower((name)::text) ~~ 'iphone%'::text)
             Rows Removed by Filter: 100002
@@ -279,7 +279,7 @@ GIN индекс работает отлично:
             Options: Inlining true, Optimization true, Expressions true, Deforming true
             Timing: Generation 0.534 ms (Deform 0.065 ms), Inlining 214.777 ms, Optimization 80.025 ms, Emission 125.926 ms, Total 421.261 ms
         Execution Time: 1804.312 ms
-    ```
+ ```
 
 **Вывод:**
 - Экспериментально доказано, что принудительное отключение Seq Scan (`SET enable_seqscan = off`) приводит к катастрофическому падению производительности: с 28 мс до 1804 мс (в 64 раза медленнее)
@@ -317,7 +317,7 @@ GIN индекс работает отлично:
 
 **Результат:** составной индекс работае отлично
 
-    ```text
+```text
         Sort  (cost=7062.08..7095.59 rows=13407 width=23) (actual time=8.498..8.970 rows=13337 loops=1)
         Sort Key: price DESC
         Sort Method: quicksort  Memory: 999kB
@@ -333,7 +333,7 @@ GIN индекс работает отлично:
         Buffers: shared hit=35 read=1
         Planning Time: 0.270 ms
         Execution Time: 9.261 ms
-    ```
+```
 
 **Выводы:**
 - Составной индекс `idx_products_category_price` (category, price) успешно ускоряет сложные запросы с фильтрацией по нескольким полям. Время выполнения составило 9.26 мс для выборки 13,337 записей (13.3% таблицы).
@@ -377,3 +377,4 @@ GIN индекс работает отлично:
 
 
 **Оптимальная стратегия:** регулярно анализировать `pg_stat_user_indexes`, удалять неиспользуемые индексы и создавать составные/покрывающие индексы для частых запросов
+
